@@ -18,27 +18,25 @@ struct Fraction
 
 int main(){
 
-    Fraction f;
+    Fraction *f;
     int num;
 
     cout << "How many fractions do you want to make?: " << endl;
     cin >> num;
+     f = new Fraction[num];
     
     for (int i = 0; i < num; i++){
         cout << "Enter the numerator for fraction " << (i+1) << ":" << endl;
-        cin >> f.numerator;
+        cin >> f[i].numerator;
         cout << "Enter the denominator for fraction " << (i+1) << ":" << endl;
-        cin >> f.denominator;
+        cin >> f[i].denominator;
 
-        cout << "Created Fraction:\n"<< f.numerator << "\n-\n" << f.denominator << endl;
+        cout << "Created Fraction:\n"<< (1 + 1)<< f[i].numerator << "\n-\n" << f[i].denominator << endl;
+
         
-
     }   
     
-
-    
-
-
+    delete[] f;
 
     return 0;
 }
